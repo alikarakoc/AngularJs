@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS Directive</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-locale_tr.js"></script>
+</head>
+<body>
+    <benim-directiveim></benim-directiveim>
+    <script>
+        angular.module("myApp", [])
+        .directive("benimDirectiveim", function () {
+            return {
+                restrict: 'E',
+                template: 'Merhaba AngularJS'
+            }
+            /*
+                RESTRICT E A C M
+                E= ELEMENT
+                A= ATTRIBUTE
+                C= CLASS
+                M= Comment - YORUM
+
+                Şeklinde kullanılabilir.
+
+                Örn; 
+                <div benim-directiveim></div>
+
+                Ve ikisi aynı anda da çalışabilir;
+                <div benim-directiveim></div> TİPİ ATTRIBUTE
+                <benim-directiveim></benim-directiveim> TİPİ ELEMENT
+
+                O ZAMAN RESTRICT = AE OLMALI.
+
+            */
+        });
+    </script>
+</body>
+</html>

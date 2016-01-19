@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>AngularJS Yapısal Filtreler - Para Birimi</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+
+    <input type="text" ng-model="name" ng-init="name= 250" />
+    
+    <h3>{{name | currency:""}} TL</h3>
+    <h3>{{name | currency:""}} ₺</h3>
+    <h3>{{name | currency:"TL "}} </h3>
+
+</body>
+</html>

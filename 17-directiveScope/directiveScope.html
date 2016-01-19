@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS Directive Scope</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-locale_tr.js"></script>
+</head>
+<body>
+    <input type="text" ng-model="isim" placeholder="AngularJS" ng-init="isim='AngularJS'" />
+    <my-element my-attribute="isim"></my-element>
+    <script>
+        angular.module("myApp", [])
+        .directive("myElement", function () {
+            return {
+                restrict: 'EC',
+                scope: {
+                    directiveIsim: "=myAttribute"
+                },
+                replace: true,
+                template: '<p><input type="text" ng-model="directiveIsim" /></p>',
+                link: function (scope, elem, attr) {
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

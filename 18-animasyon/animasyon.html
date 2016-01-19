@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-locale_tr.js"></script>
+    <script src="../js/angular-animate.js"></script>
+    <style>
+        .sample-text {
+            padding: 10px;
+            border: 1px solid black;
+            background: white;
+        }
+
+        .sample-text {
+            -webkit-transition: all linear 0.5s;
+            transition: all linear 0.5s;
+        }
+
+            .sample-text.ng-hide {
+                opacity: 0;
+            }
+    </style>
+</head>
+<body>
+    <div ng-init="checked=true">
+        <label>Göster</label>
+        <input type="checkbox" ng-model="checked" />
+
+        <div class="sample-text" ng-show="checked">
+            İçerik alanı
+        </div>
+    </div>
+    <script>
+        angular.module("myApp", ["ngAnimate"]);
+    </script>
+</body>
+</html>

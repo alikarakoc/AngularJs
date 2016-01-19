@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJs Controller Yapısı</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="MyController">
+        <h3>{{state}}</h3>
+        <button ng-click="clickMe()">Beni tıkla!</button>
+
+        <script>
+            var myApp = angular.module("myApp", []);
+            myApp.controller("MyController", function ($scope) {
+                $scope.state = "Merhaba Controller";
+                $scope.clickMe = function () {
+                    $scope.state = "Bravo beni tıkladın!";
+                };
+            })
+        </script>
+    </div>
+</body>
+</html>

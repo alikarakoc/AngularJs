@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-translate.min.js"></script>
+</head>
+<body>
+    <h2 translate="TITLE">Hello</h2>
+    <p translate="FOO">This is a paragraph.</p>
+
+    <div ng-controller="MyController">
+        <button class="btn" ng-click="changeLanguage('tr')" translate="BUTTON_LANG_TR">türkçe</button>
+        <button class="btn" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">english</button>
+        <button class="btn" ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE">german</button>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', ['pascalprecht.translate']);
+
+        app.config(function ($translateProvider) {
+            $translateProvider.useSanitizeValueStrategy(null);
+            $translateProvider.translations('tr', {
+                TITLE: 'Merhaba',
+                FOO: 'Bu bir türkçe paragraftır.',
+                BUTTON_LANG_TR: 'Türkçe',
+                BUTTON_LANG_EN: 'İngilizce',
+                BUTTON_LANG_DE: 'Almanca'
+            });
+            $translateProvider.translations('en', {
+                TITLE: 'Hello',
+                FOO: 'This is a paragraph.',
+                BUTTON_LANG_TR: 'Turkey',
+                BUTTON_LANG_EN: 'English',
+                BUTTON_LANG_DE: 'German'
+            });
+            $translateProvider.translations('de', {
+                TITLE: 'Hallo',
+                FOO: 'Dies ist ein Paragraph.',
+                BUTTON_LANG_TR: 'Turkish',
+                BUTTON_LANG_EN: 'Englisch',
+                BUTTON_LANG_DE: 'Deutsch'
+            });
+            $translateProvider.preferredLanguage('tr');
+        });
+
+        app.controller('MyController', function ($scope, $translate) {
+            $scope.changeLanguage = function (key) {
+                $translate.use(key);
+            };
+        });
+    </script>
+
+</body>
+</html>

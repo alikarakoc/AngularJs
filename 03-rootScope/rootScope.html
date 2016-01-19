@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html ng-app="myFirstApp">
+<head>
+    <title>AngularJS Root Scope Child Scope</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="ParentController">
+        <input type="text" ng-model="childName" />
+        <h2>Parent header : {{childName}}</h2>
+
+
+       <h2>{{6*6}}</h2>
+
+
+        <div ng-controller="ChildController">
+            <input type="text" ng-model="childName" />
+            <h2>Child header: {{childName}}</h2>
+        </div>
+    </div>
+    <script>
+        angular.module("myFirstApp", [])
+            .run(function ($rootScope) {
+                $rootScope.childName = "RootScope Değeri";
+            })
+            .controller("ParentController", function ($scope) { })
+            .controller("ChildController", function ($scope) { });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJs httpServis</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="MyController">
+        <ul>
+            <li ng-repeat="kisi in kisiler | orderBy:'sira'">
+                {{kisi.isim}}, {{kisi.yas}} yaşında ve {{kisi.sehir}} şehrinde yaşıyor.
+            </li>
+        </ul>
+    </div>
+    <script>
+        angular.module("myApp", [])
+        .factory("myService", function ($http) {
+            var _kisiGetir = function () {
+                $http.get("/json/kisiler.json").success(function (data) {
+                    return data;
+                });
+            };
+            var _kisiKaydet = function (isim) {
+                return $http.post("data.json", isim);
+            };
+            return {
+                kisiGetir: _kisiGetir,
+                saveUser: _kisiKaydet
+            }
+        })
+        .controller("MyController", function ($scope, myService) {
+            $scope.kisiler = myService.kisiGetir();
+        });
+    </script>
+</body>
+</html>

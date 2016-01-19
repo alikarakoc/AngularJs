@@ -1,0 +1,32 @@
+﻿[
+  {
+    "isim": "Ahmet",
+    "sehir": "Ankara",
+    "sira": 1,
+    "yas": "23"
+  },
+  {
+    "isim": "Aslı",
+    "sehir": "Antalya",
+    "sira": 4,
+    "yas": "22"
+  },
+  {
+    "isim": "Şenay",
+    "sehir": "Antalya",
+    "sira": 3,
+    "yas": "21"
+  },
+  {
+    "isim": "Salih",
+    "sehir": "Antalya",
+    "sira": 2,
+    "yas": "33"
+  },
+  {
+    "isim": "Ali",
+    "sehir": "İstanbul",
+    "sira": 5,
+    "yas": "22"
+  }
+]

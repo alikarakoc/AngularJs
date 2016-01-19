@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="myFirstApp">
+<head>
+    <title>AngularJs Parent Child Scope</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+</head>
+<body>
+
+    <div ng-controller="ParentController">
+
+        <input type="text" ng-model="childName" />
+        <h2> Parent Header : {{childName}}</h2>
+
+        <div ng-controller="ChildController">
+            <input type="text" ng-model="childName" />
+            <h3>Child header : {{childName}}</h3>
+        </div>
+
+    </div>
+    <script>
+        angular.module("myFirstApp", [])
+        .controller("ParentController", function ($scope) { })
+        .controller("ChildController", function ($scope) { });
+    </script>
+</body>
+</html>

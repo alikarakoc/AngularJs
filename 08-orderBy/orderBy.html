@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJs Order By</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-locale_tr.js"></script>
+</head>
+<body>
+
+    <div ng-controller="MyFirstController">
+        <table>
+            <tr>
+                <td>İsim</td>
+                <td>Telefon</td>
+                <td>Yaş</td>
+            </tr>
+            <tr ng-repeat="kisi in kisiler | orderBy:'isim' | orderBy:'yas'">
+                <td>{{kisi.isim}}</td>
+                <td>{{kisi.telefon}}</td>
+                <td>{{kisi.yas}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        angular.module("myApp", [])
+        .controller("MyFirstController", ["$scope", function ($scope) {
+            $scope.kisiler = [
+                { isim: "Mehmet", telefon: "53458584", yas: 12 },
+                { isim: "Canker", telefon: "87542154", yas: 21 },
+                { isim: "Kodlab", telefon: "96345677", yas: 35 },
+                { isim: "AngularJS", telefon: "14542554", yas: 9 }
+            ];
+        }]);
+    </script>
+
+</body>
+</html>

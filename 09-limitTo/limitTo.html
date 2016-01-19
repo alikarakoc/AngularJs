@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJs Limit To</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-locale_tr.js"></script>
+</head>
+<body>
+    <div ng-controller="MyFirstController">
+        <p>Sayı dizisi: {{sayiDizisi}}</p>
+        <input type="text" ng-model="diziLimiti" />
+        <p>Formatlanmış dizi : </p>
+        <p>{{sayiDizisi | limitTo:diziLimiti}}</p>
+
+        <p>String değer : {{karakterString}}</p>
+        <input type="text" ng-model="karakterLimiti" />
+        <p>{{karakterString | limitTo:karakterLimiti}}</p>
+
+        <p>Sayı değer : {{sayi}}</p>
+        <input type="text" ng-model="sayiLimiti" />
+        <p>{{sayi | limitTo:sayiLimiti}}</p>
+    </div>
+    <script>
+        angular.module("myApp", [])
+        .controller("MyFirstController", ["$scope", function ($scope) {
+
+            $scope.sayiDizisi = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            $scope.karakterString = "abcdefgh";
+            $scope.sayi = 81002231;
+
+            $scope.diziLimiti = 3;
+            $scope.karakterLimiti = 3;
+            $scope.sayiLimiti = 3;
+
+        }]);
+    </script>
+</body>
+</html>

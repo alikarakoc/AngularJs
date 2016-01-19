@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-locale_tr.js"></script>
+    <style>
+        .kirmizi {
+            color: red;
+        }
+
+        .kucuk {
+            font-size: 10px;
+        }
+
+        .capital {
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <label>Kırmızı</label>
+    <input type="checkbox" ng-model="kirmiziMi" />
+    <label>Küçük</label>
+    <input type="checkbox" ng-model="kucukMu" />
+    <label>İlk Harfi Büyük</label>
+    <input type="checkbox" ng-model="ilkHarfBuyukMu" />
+    <h1 ng-class="{kirmizi: kirmiziMi, kucuk:kucukMu, capital:ilkHarfBuyukMu}">ngClass Örnek</h1>
+</body>
+</html>

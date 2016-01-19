@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJs Custom Filter</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-locale_tr.js"></script>
+</head>
+<body>
+    <input type="text" ng-model="name" ng-init="name= 'angularjs'" />
+    <h3>{{name | myFilter}}</h3>
+    <script>
+        angular.module("myApp", [])
+        .filter('myFilter', function () {
+            return function (input) {
+                return input.toUpperCase();
+            }
+        });
+    </script>
+</body>
+</html>

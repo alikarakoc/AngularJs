@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>AngularJs ngIf</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-locale_tr.js"></script>
+</head>
+<body>
+    <label for="chk">Tıkla</label>
+    <input type="checkbox" id="chk" ng-model="durum" ng-init="durum=false" />
+    <br />
+    <!-- MOBİL PROJELERİNDE TELEFONUN İŞLEMCİSİ BİLGİSAYAR KADAR İYİ OLMAYACAĞINDAN DOM ÜZERİNDE ÇOK İŞLEM YAPTIRMAK İYİ DEĞİL.  -->
+    <p ng-if="durum">
+        alavole
+    </p>
+</body>
+</html>

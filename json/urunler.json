@@ -1,0 +1,39 @@
+﻿{
+    "sonuc": [
+        {
+            "kod": "URN-1",
+            "ad": "iPhone 6s Plus",
+            "fiyat": 3.899,
+            "stok": 50,
+            "sira": 1
+        },
+        {
+            "kod": "URN-2",
+            "ad": "iPhone 4s",
+            "fiyat": 599,
+            "stok": 45,
+            "sira": 2
+        },
+        {
+            "kod": "URN-3",
+            "ad": "iPhone 5s",
+            "fiyat": 1.149,
+            "stok": 35,
+            "sira": 3
+        },
+        {
+            "kod": "URN-4",
+            "ad": "iPhone 6",
+            "fiyat": 2.539,
+            "stok": 25,
+            "sira": 4
+        },
+        {
+            "kod": "URN-5",
+            "ad": "iPhone 6 Plus",
+            "fiyat": 3.539,
+            "stok": 15,
+            "sira": 5
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-locale_tr.js"></script>
+</head>
+<body>
+    <form ng-controller="myController" name="angularForm" novalidate="novalidate">
+
+        <div>
+            <label>Ad :</label>
+            <input type="text" name="ad" ng-model="ad" required="" />
+            <span style="color:red" ng-show="angularForm.ad.$dirty && angularForm.ad.$invalid">
+                <span ng-show="angularForm.ad.$error.required">Ad alanı boş geçilemez</span>
+            </span>
+        </div>
+
+        <div>
+            <label>Email :</label>
+            <input type="email" name="email" ng-model="email" required="" />
+            <span style="color:red" ng-show="angularForm.email.$dirty && angularForm.email.$invalid">
+                <span ng-show="angularForm.ad.$error.required">Email adresi boş geçilemez</span>
+                <span ng-show="angularForm.ad.$error.email">Email adresi uygun değil</span>
+            </span>
+        </div>
+
+        <div>
+            <input type="submit" ng-disabled="angularForm.ad.$dirty && angularForm.ad.$invalid || angularForm.email.$dirty && angularForm.email.$invalid" />
+        </div>
+        <script>
+            angular.module("myApp", [])
+            .controller("myController", function ($scope) {
+
+            });
+        </script>
+    </form>
+</body>
+</html>

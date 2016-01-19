@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+</head>
+<body ng-controller="MyController">
+
+    <h3>{merhaba} Metodundan dönen değer : {{rMerhaba}}</h3>
+    <h3>{yaz} Metodundan dönen değer : {{rYaz}}</h3>
+
+    <script>
+        angular.module("myApp", [])
+        .factory("merhabaServis", function () {
+            return {
+                merhaba: function (ad) {
+                    return "Merhaba " + ad;
+                },
+                yaz: function (mesaj) {
+                    return mesaj;
+                }
+            }
+        })
+        .controller("MyController", function ($scope, merhabaServis) {
+            $scope.rYaz = merhabaServis.yaz("Bir yazdırma işlemi");
+            $scope.rMerhaba = merhabaServis.merhaba("Ali");
+        });
+    </script>
+</body>
+</html>

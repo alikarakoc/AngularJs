@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-locale_tr.js"></script>
+</head>
+<body ng-controller="timeController">
+
+    <p>{{now | date}}</p>
+    <p>{{now | date:'medium'}}</p>
+    <p>{{now | date:'short'}}</p>
+    <p>{{now | date:'fullDate'}}</p>
+    <p>{{now | date:'longDate'}}</p>
+    <p>{{now | date:'mediumDate'}}</p>
+    <p>{{now | date:'shortDate'}}</p>
+    <p>{{now | date:'mediumTime'}}</p>
+    <p>{{now | date:'shortTime'}}</p>
+
+    <script>
+        var myApp = angular.module("myApp", []);
+        myApp.controller("timeController", function ($scope, $interval) {
+            $interval(function () {
+                var d = new Date();
+                $scope.now = d.getTime();
+            });
+        });
+    </script>
+
+</body>
+</html>

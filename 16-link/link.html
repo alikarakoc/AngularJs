@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS link</title>
+    <meta charset="utf-8" />
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-locale_tr.js"></script>
+</head>
+<body>
+    <link-example></link-example>
+    <script>
+        angular.module("myApp", [])
+        .directive("linkExample", function () {
+            return {
+                restrict: 'AE',
+                template: '<h3>Merhaba AngularJs</h3>',
+                link: function (scope, element, attrs) {
+                    element.bind("click", function () {
+                        element.css("color", "blue");
+                    });
+                }
+            };
+        });
+    </script>
+</body>
+</html>
