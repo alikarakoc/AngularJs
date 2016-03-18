@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <style>
+        .tabs {
+            float: left;
+        }
+
+            .tabs li {
+                float: left;
+                width: 200px;
+                color: #fff;
+                list-style: none;
+                margin-right: 5px;
+                -webkit-border-top-right-radius: 5px;
+                -webkit-border-top-left-radius: 5px;
+                padding: 5px;
+                background: #ff6a00;
+            }
+
+        .tabContents {
+            float: left;
+        }
+
+        .cb {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <ul class="tabs">
+        <li ng-class="{active: activeTab=='ilkTab'}" ng-click="activeTab='ilkTab'">İlk Tab</li>
+        <li ng-class="{active: activeTab=='ikinciTab'}" ng-click="activeTab='ikinciTab'">İkinci Tab</li>
+    </ul>
+    <div class="cb"></div>
+
+    <div class="tabContents">
+        <div ng-show="activeTab=='ilkTab'">İlk tabın içeriği</div>
+        <div ng-show="activeTab=='ikinciTab'">İkinci tabın içeriği</div>
+    </div>
+</body>
+</html>
